@@ -3,12 +3,10 @@
 namespace SenseiTarzan\MultiEconomySQL\Class\Save;
 
 use Generator;
-use PHPUnit\Event\Code\Throwable;
 use pmmp\thread\ThreadSafeArray;
 use pocketmine\player\Player;
 use poggit\libasynql\DataConnector;
 use poggit\libasynql\libasynql;
-use poggit\libasynql\SqlError;
 use SenseiTarzan\MultiEconomy\Class\Exception\EconomyUpdateException;
 use SenseiTarzan\MultiEconomy\Class\Save\IDataSaveEconomy;
 use SenseiTarzan\MultiEconomy\Component\EcoPlayerManager;
@@ -87,7 +85,6 @@ class SQLSave extends IDataSaveEconomy
     function createPromiseTop(string $economy, int $limite): Generator
     {
         return Await::promise(function ($resolve, $reject) use ($economy, $limite): void{
-
             Await::f2c(function () use ($economy, $limite): Generator{
                 $economy = mb_strtolower($economy);
                 $rows = yield from $this->dataConnector->asyncSelect("$economy.top", ['limit' => $limite]);
