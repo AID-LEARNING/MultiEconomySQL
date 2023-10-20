@@ -32,7 +32,7 @@ class SQLSave extends IDataSaveEconomy
 
     public function getName(): string
     {
-        return "MYSQL";
+        return "SQL";
     }
 
     public function createPromiseEconomy(Player|string $player): Generator
