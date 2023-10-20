@@ -1,0 +1,5 @@
+name: MultiEconomySQL
+api: 5.0.0
+version: 0.0.1
+main: SenseiTarzan\MultiEconomySQL\Main
+

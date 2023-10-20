@@ -1,0 +1,16 @@
+---
+branches:
+  - stable
+  - next-major
+projects:
+  MultiEconomySQL:
+    path: ""
+    icon: "icon.png"
+    lint:
+      phpstan: false
+    libs:
+      - src: poggit/libasynql/libasynql
+        version: ^4.2.0
+      - src: SOF3/await-generator/await-generator
+        version: ^3.6.1
+...
